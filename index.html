@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Worst Day Yet?</title>
+  <meta name="description" content="Is it the worst day yet of COVID?">
+
+<style>
+  body {font-family:'News Cycle', 'Helvetica','sans-serif';}
+  h1 {  font-weight: 700;
+    font-size:4.0em;
+    height:250px;
+}
+#container {
+  margin-left:auto;
+  margin-right:auto;
+  width:75%;
+  text-align:center;
+}
+@media only screen and (max-width: 600px) {
+  #container {
+    width:90%;
+  }
+} 
+
+  </style>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+<div id="container">
+<h1 id="worst">
+  Checking...
+</h1>
+<p id="sub"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js" integrity="sha512-e2WVdoOGqKU97DHH6tYamn+eAwLDpyHKqPy4uSv0aGlwDXZKGwyS27sfiIUT8gpZ88/Lr4UZpbRt93QkGRgpug==" crossorigin="anonymous"></script>
+<script>
+  $( document ).ready(function() {
+    jQuery("#worst").fitText(0.8);
+  
+    var date = new Date();
+    var yesterday = new Date(date.getTime());
+    yesterday.setDate(date.getDate() - 1);
+    var standard = yesterday.getFullYear().toString() + ("0" + (yesterday.getMonth() + 1)).slice(-2) + ("0" + yesterday.getDate()).slice(-2);
+    
+    $.getJSON( "https://objectif.app/worstdayyet/worst.json", function( json ) {
+      if(json.highest.date == json.today.date) {
+        //new high :(
+          $("#worst").html("Worst Day Yet");
+          $("#sub").html(" with " + json.today.posInc + " new COVID cases in the US");
+      }
+      else {
+        $("#worst").html("Not the worst day");
+        $("#worst").css("font-weight",400);
+        $("#sub").html(" Today had " + json.today.posInc + " new COVID cases in the US, compared to the highest day of " + json.highest.posInc + " which was on " + json.highest.date);
+        
+      }
+
+     });
+  });
+  
+  
+  </script>
+  </body>
+  </html>
