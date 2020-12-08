@@ -70,7 +70,7 @@ layout:         default
     var standard = yesterday.getFullYear().toString() + ("0" + (yesterday.getMonth() + 1)).slice(-2) + ("0" + yesterday.getDate()).slice(-2);
 
     $.getJSON("https://objectif.app/worstdayyet/worst.json", function (json) {
-      if (json.highest.date !== json.today.date) {
+      if (json.highest.date == json.today.date) {
         $("#worst").html("Yes, it's the worst day yet");
         $("#sub").html(" with " + json.today.posInc.toLocaleString("en") + " new COVID cases in the US.");
       } else {
