@@ -1,0 +1,48 @@
+# Site
+baseurl: ""
+permalink: /:title
+title: Worst Day Yet?
+tagline: Is it the worst day yet of COVID?
+description: Is it the worst day yet of COVID?
+url: "https://www.worstdayyet.com"
+logo: 
+lang: en_US
+favicon: /assets/images/favicon.png
+
+# other
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-target-blank
+
+include: 
+  - _pages
+
+exclude:
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+# minification
+compress_html:  
+  clippings: all  
+  comments: ["<!-- ", " -->"] 
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th] 
+  profile: false 
+  blanklines: false 
+  ignore: 
+    envs: []

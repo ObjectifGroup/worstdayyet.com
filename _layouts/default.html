@@ -1,0 +1,84 @@
+--- 
+layout: compress    
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+
+      {% if jekyll.environment == 'production' %}
+      <!-- Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtm }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "{{ site.gtm }}");
+      </script>
+      {% endif %}
+
+      {% seo %}
+
+      <!-- Libs CSS -->
+      <link rel="stylesheet" href="{{ '/assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css'| absolute_url }}" />
+
+      <!-- Theme CSS -->
+      <link rel="stylesheet" href="{{'/assets/css/theme.min.css'| absolute_url }}" />
+
+      <!-- Site Icon -->
+      <link rel="icon" href="{{'/assets/images/favicon.png'| absolute_url }}" />
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet" />
+
+    </head>
+
+    {% capture layout %} {% if page.layout %}layout-{{ page.layout }} {% endif %} {% endcapture %}
+
+    <body class="{{layout}}">
+
+      {{ content }}
+
+      <!-- Footer -->
+      <div class="footer pt-3 pb-3 bg-dark text-base">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="">
+                <ul class="list-inline">
+                  <li class="list-inline-item">© {{ site.time | date: '%Y' }} {{ site.title }}</li>
+                  <li class="list-inline-item"><a href="{{ 'terms' | absolute_url }}" class="text-reset">Terms and Conditions</a></li>
+                  <li class="list-inline-item"><a href="{{ 'privacy' | absolute_url }}" class="text-reset">Privacy Policy</a></li>                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libs JS -->
+      <script src="{{'/assets/libs/jquery/dist/jquery.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/jquery-slimscroll/jquery.slimscroll.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/prismjs/prism.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/leaflet/dist/leaflet.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/moment/min/moment.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/lightpick/lightpick.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/ion-rangeslider/js/ion.rangeSlider.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/inputmask/dist/jquery.inputmask.min.js' | absolute_url }}"></script>
+      <script src="{{'/assets/libs/lightbox/js/lightbox.min.js' | absolute_url }}"></script>
+
+      <!-- clipboard -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
+
+      <!-- Theme JS -->
+      <script src="{{'/assets/js/theme.min.js' | absolute_url }}"></script>
+
+    </body>
+  </head>
+</html>
