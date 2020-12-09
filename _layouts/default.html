@@ -6,7 +6,9 @@ layout: compress
 <html lang="en">
   <head>
 
-    <meta charset="utf-8" />
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
       {% if jekyll.environment == 'production' %}
       <!-- Google Analytics -->
@@ -24,9 +26,6 @@ layout: compress
 
       {% seo %}
 
-      <!-- Libs CSS -->
-      <link rel="stylesheet" href="{{ '/assets/libs/ion-rangeslider/css/ion.rangeSlider.min.css'| absolute_url }}" />
-
       <!-- Theme CSS -->
       <link rel="stylesheet" href="{{'/assets/css/theme.min.css'| absolute_url }}" />
 
@@ -35,7 +34,7 @@ layout: compress
 
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet" />
-<meta property="og:image" content="https://worstdayyet.com/assets/images/worstdayyet-social.png" />
+      <meta property="og:image" content="https://worstdayyet.com/assets/images/worstdayyet-social.png" />
     </head>
 
     {% capture layout %} {% if page.layout %}layout-{{ page.layout }} {% endif %} {% endcapture %}
@@ -64,7 +63,6 @@ layout: compress
       <script src="{{'/assets/libs/jquery/dist/jquery.min.js' | absolute_url }}"></script>
       <script src="{{'/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' | absolute_url }}"></script>
       <script src="{{'/assets/libs/moment/min/moment.min.js' | absolute_url }}"></script>
-
 
       <!-- Theme JS -->
       <script src="{{'/assets/js/theme.min.js' | absolute_url }}"></script>
