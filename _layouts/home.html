@@ -13,9 +13,6 @@ title:
               <i class="far fa-chart-bar"></i>
             </a>
           </div>
-          <!--<h1 class="text-white mb-4">
-            {{ site.title }}
-          </h1>-->
           <p class="lead">
             {{ site.tagline }}
           </p>
@@ -89,9 +86,6 @@ title:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function () {
-
-    
-
     $.getJSON("https://objectif.app/worstdayyet/worst.json", function (json) {
       if (json.highest.date == json.today.date) {
         $("#worst").html("Yes, it's the worst day yet");
