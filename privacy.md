@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Worst Day Yet Privacy Policy
-description: This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.worstdayyet.com (the “Site”).
+description: This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from worstdayyet.com (the “Site”).
 ---
 
 
@@ -66,4 +66,4 @@ We may update this privacy policy from time to time in order to reflect, for exa
 
 For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e-mail at admin@worstdayyet.com or by mail using the details provided below:
 
-2102 Quail Hollow Dr, Bryan, TX, 77802, United States
+PO Box 6724, Austin, TX 78762, United States
