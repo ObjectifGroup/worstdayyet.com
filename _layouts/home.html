@@ -87,13 +87,13 @@ title:
 <script>
   $(document).ready(function () {
     $.getJSON("https://objectif.app/worstdayyet/worst.json", function (json) {
-      if (json.highest.date == json.today.date) {
+      if (json.posInc.highestdate == json.posInc.todaydate) {
         $("#worst").html("Yes, it's the worst day yet");
-        $("#sub").html(" with " + json.today.posInc.toLocaleString("en") + " new COVID cases in the US.");
+        $("#sub").html(" with " + json.posInc.today.toLocaleString("en") + " new COVID cases in the US.");
       } else {
         $("#worst").html("Not the worst day");
         $("#worst").css("font-weight", 400);
-        $("#sub").html(" Today had " + json.today.posInc.toLocaleString("en") + " new COVID cases in the US, compared to the highest day of " + json.highest.posInc.toLocaleString("en") + " which was " + moment(json.highest.date, "YYYYMMDD").from(moment().subtract(1, 'days')) + ".");
+        $("#sub").html(" Today had " + json.posInc.today.toLocaleString("en") + " new COVID cases in the US, compared to the highest day of " + json.posInc.highest.toLocaleString("en") + " which was " + moment(json.posInc.highestdate, "YYYYMMDD").from(moment().subtract(1, 'days')) + ".");
       }
     });
   });
